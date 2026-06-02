@@ -112,6 +112,21 @@ npm run start
 docker pull pubuzhixing/drawnix:latest
 ```
 
+## Self-hosting with sync
+
+Drawnix can be hosted as a single local server with per-user sync.
+
+```
+npm install
+npm run host
+```
+
+Then open `http://<server-ip>:3000`.
+
+Each user can create an account in the app, and their board state will sync automatically between devices every few seconds.
+
+The server keeps data under `DRAWNIX_DATA_DIR` (defaults to `./data` locally).
+
 ## Dependencies
 
 - [plait](https://github.com/worktile/plait) - Open source drawing framework

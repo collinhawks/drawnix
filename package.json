@@ -4,6 +4,8 @@
   "license": "MIT",
   "scripts": {
     "start": "nx serve web --host=0.0.0.0",
+    "start:server": "node server/index.js",
+    "host": "npm run build && node server/index.js",
     "build": "nx run-many -t=build",
     "lint": "nx run-many --target=lint --all --fix",
     "build:web": "nx build web",

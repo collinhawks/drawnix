@@ -7,13 +7,19 @@ COPY . /builder
 RUN npm install \
     && npm run build 
 
+FROM node:20-slim
 
-FROM lipanski/docker-static-website:2.6.0
+WORKDIR /app
 
-WORKDIR /home/static
+ENV DRAWNIX_DATA_DIR=/data
+ENV DRAWNIX_PORT=3000
+ENV DRAWNIX_HOST=0.0.0.0
 
-COPY  --from=builder /builder/dist/apps/web/  /home/static
+COPY --from=builder /builder/dist/apps/web ./dist/apps/web
+COPY --from=builder /builder/server ./server
 
-EXPOSE 80
+VOLUME ["/data"]
 
-CMD ["/busybox-httpd", "-f", "-v", "-p", "80", "-c", "httpd.conf"]
+EXPOSE 3000
+
+CMD ["node", "server/index.js"]

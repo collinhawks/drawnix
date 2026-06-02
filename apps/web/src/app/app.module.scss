@@ -1,1 +1,97 @@
-/* Your styles goes here. */
+.shell {
+  min-height: 100vh;
+  background: #f7f8fc;
+}
+
+.statusBar {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  background: #fff;
+  border-bottom: 1px solid #e5e7ef;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  font-size: 0.9rem;
+}
+
+.statusActions {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.authShell {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+  background: linear-gradient(180deg, #f7f8fc 0%, #eef2ff 100%);
+}
+
+.authCard {
+  width: min(100%, 28rem);
+  background: #fff;
+  border: 1px solid #dbe2f1;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  display: grid;
+  gap: 1rem;
+  box-shadow: 0 12px 40px rgba(28, 37, 71, 0.08);
+}
+
+.authCard label {
+  display: grid;
+  gap: 0.4rem;
+  font-size: 0.95rem;
+}
+
+.authCard input {
+  border: 1px solid #c9d3e7;
+  border-radius: 0.7rem;
+  padding: 0.8rem 0.9rem;
+  font: inherit;
+}
+
+.authActions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.secondaryButton,
+.authActions button,
+.statusActions button {
+  border: 1px solid #c9d3e7;
+  background: #fff;
+  color: #1f2a44;
+  border-radius: 999px;
+  padding: 0.55rem 1rem;
+  cursor: pointer;
+}
+
+.error {
+  color: #b42318;
+  margin: 0;
+}
+
+.localBanner,
+.syncPulse {
+  position: fixed;
+  left: 1rem;
+  bottom: 1rem;
+  z-index: 20;
+  background: rgba(17, 24, 39, 0.92);
+  color: #fff;
+  border-radius: 999px;
+  padding: 0.55rem 0.9rem;
+  font-size: 0.85rem;
+}
+
+.syncPulse {
+  left: auto;
+  right: 1rem;
+}

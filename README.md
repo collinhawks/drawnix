@@ -114,6 +114,21 @@ npm run start
 docker pull pubuzhixing/drawnix:latest
 ```
 
+## 本地自托管 + 同步
+
+Drawnix 现在支持单机局域网自托管，并带有按用户区分的同步存储层。
+
+```
+npm install
+npm run host
+```
+
+然后访问 `http://<server-ip>:3000`。
+
+每个用户都可以在应用里创建自己的账号，白板内容会自动定时同步到服务端，并在同一账号的多设备之间保持一致。
+
+服务端数据默认存放在 `DRAWNIX_DATA_DIR`（本地默认 `./data`）。
+
 ## 依赖
 
 - [plait](https://github.com/worktile/plait) - 开源画图框架
